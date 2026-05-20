@@ -1,0 +1,109 @@
+.main{
+  width: 100%;
+  height: 77vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.main form{
+  width: 40%;
+  height: 40vh;
+  box-shadow: 5px 2px 2px 2px whitesmoke;
+}
+
+.main form input{
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  border: 1px solid black;
+  background-color:rgb(251, 251, 251)3);
+}
+
+.main form button{
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  background-color: rgb(61, 255, 47);
+}
+
+.main form button:hover{
+  background-color: rgb(33, 214, 20);
+}
+
+
+/* =========================
+   Tablet Responsive
+========================= */
+
+@media (max-width: 992px){
+
+  .main{
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .main form{
+    width: 70%;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .main form input{
+    width: 85%;
+    margin-left: 7.5%;
+  }
+
+  .main form button{
+    width: 85%;
+    margin-left: 7.5%;
+  }
+
+}
+
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 600px){
+
+  .main{
+    height: auto;
+    padding: 30px 15px;
+    align-items: center;
+  }
+
+  .main form{
+    width: 100%;
+    height: auto;
+    padding: 20px 0px 30px 0px;
+    border-radius: 15px;
+  }
+
+  .main form input{
+    width: 90%;
+    height: 45px;
+    margin-left: 5%;
+    margin-top: 25px;
+    font-size: 15px;
+    padding-left: 10px;
+  }
+
+  .main form button{
+    width: 90%;
+    height: 45px;
+    margin-left: 5%;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+}
