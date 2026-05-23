@@ -1,16 +1,31 @@
-import Footer from "./footer";
-import style from "./ProductsPage.module.css";
+import style from "./AllProducts.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function ProductsPage({ AddToCart, cartItems = [] }) {
+function AdminProductsPage({ AddToCart, cartItems = [] }) {
 
   const [products, setProducts] = useState([]);
   const [orderQuantity, setOrderQuantity] = useState({});
 
+
+  //Delete products individuly. 
+  const handelDeleteProduct = (id)=>{
+    fetch(`http://localhost:5000/api/delete-product/${id}`,
+       {
+         method:"DELETE"
+       })
+      .then((res)=>res.json())
+      .then((data)=>{ setProducts((prevProducts)=>prevProducts.filter((item)=> item.id !== id))
+        console.log(id);
+        alert(data.msg);
+      }).catch((err) => {
+         console.log(err);
+      });
+  }
+
+
   // GET PRODUCTS FROM BACKEND
   useEffect(() => {
-
     fetch("http://localhost:5000/api/allProducts")
       .then((res) => res.json())
       .then((data) => {
@@ -69,9 +84,12 @@ function ProductsPage({ AddToCart, cartItems = [] }) {
                 Add To Cart
               </button>
 
+
               <Link to={`/product/${item.id}`}>
                 <button>View Details</button>
               </Link>
+
+              <button onClick={()=>handelDeleteProduct(item.id)}>Delete</button>
 
             </div>
 
@@ -80,10 +98,9 @@ function ProductsPage({ AddToCart, cartItems = [] }) {
 
       </div>
 
-      <Footer />
 
     </div>
   );
 }
 
-export default ProductsPage;
+export default AdminProductsPage;

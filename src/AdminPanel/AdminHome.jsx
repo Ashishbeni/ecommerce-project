@@ -36,8 +36,16 @@ function AdminHome() {
               <li>All Products</li>
             </ul>
           </li>
+          </ul>
 
+                <ul>
+          <li  className={style.menuItems}>
+               <Link to="/admin/view-product">
+                  Product List
+                </Link>
+          </li>
         </ul>
+
         <button id={style.logOut} onClick={handleLogout}>
                 Logout
         </button>
