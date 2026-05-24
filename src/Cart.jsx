@@ -22,17 +22,16 @@ function Cart({ cartItems, RemoveFromCart }) {
   const whatsappMessage = cartItems
     .map(
       (item) =>
-        `🛒 ${item.name} | Qty: ${item.quantity} | ₹${item.price * item.quantity}`
+        `🛒 ${item.productName} | Qty: ${item.quantity} | ₹${item.price * item.quantity}`
     )
     .join("\n");
 
   // 3. WhatsApp URL mein Address details add karein
   const whatsappURL = `https://wa.me/917056523602?text=${encodeURIComponent(
-    `🥛 *Murrah Gold Dairy - New Order*
+    `🥛 *HerbAmrit - New Order*
     
 *Customer Details:*
 👤 Name: ${userDetails.name}
-// 📞 Phone: ${userDetails.phone}
 📍 Address: ${userDetails.address}
 🏠 Landmark: ${userDetails.landmark}
 
@@ -47,7 +46,7 @@ ${whatsappMessage}
 
   return (
     <>
-      <h1 className={style.cartTitle}>Your Fresh Dairy Cart 🥛</h1>
+      <h1 className={style.cartTitle}>HerbAmrit Customer orders details:- 🥛</h1>
 
       <div className={style.cart}>
         {cartItems.map((item, index) => (

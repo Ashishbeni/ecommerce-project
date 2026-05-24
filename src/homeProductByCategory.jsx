@@ -55,16 +55,17 @@ function HomeProductByCategory({ AddToCart }) {
                     className={style.productCard}
                   >
 
+                    {/* PRODUCT NAME */}
+                    <h3 className={style.productName}>
+                      {item.productName}
+                    </h3>
+
                     <img
                       src={item.image}
                       alt={item.name}
                       className={style.productImage}
                     />
 
-                    {/* PRODUCT NAME */}
-                    <h3 className={style.productName}>
-                      {item.name}
-                    </h3>
 
                     {/* PRICE */}
                     <p className={style.price}>
