@@ -52,7 +52,7 @@ ${whatsappMessage}
         {cartItems.map((item, index) => (
           <div key={index} className={style.cartItemBox}>
             <img src={item.image} alt={item.name} />
-            <h5>{item.name}</h5>
+            <h5>{item.productName}</h5>
             <h5>Price: <span className={style.value}>₹{item.price}</span></h5>
             <h5>Qty: <span className={style.value}>{item.quantity}</span></h5>
             <h5>Sub Total: <span className={style.value}>₹{item.price * item.quantity}</span></h5>
