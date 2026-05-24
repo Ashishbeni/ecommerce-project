@@ -12,7 +12,7 @@ function Login(){
     const handelAdminLogin = async (e)=>{
       e.preventDefault();
 
-      const response = await fetch("http://localhost:5000/api/login",{
+      const response = await fetch("https://ecommerce-backend-e4yh.onrender.com/api/login",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

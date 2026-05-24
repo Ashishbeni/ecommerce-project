@@ -11,7 +11,7 @@ function ProductDetails({ AddToCart }) {
 
   useEffect(() => {
 
-    fetch(`http://localhost:5000/api/product/${id}`)
+    fetch(`https://ecommerce-backend-e4yh.onrender.com/api/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
 

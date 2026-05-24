@@ -9,7 +9,7 @@ function HomeProductByCategory({ AddToCart }) {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/api/product-by-category")
+    fetch("https://ecommerce-backend-e4yh.onrender.com/api/product-by-category")
 
       .then((res) => res.json())
 

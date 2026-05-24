@@ -14,7 +14,7 @@ function AddProducts() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  await fetch("http://localhost:5000/api/add", {
+  await fetch("https://ecommerce-backend-e4yh.onrender.com/api/add", {
         method: "POST",
         headers: {
               "Content-Type": "application/json"

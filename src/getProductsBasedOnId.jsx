@@ -10,7 +10,7 @@ function GetProductDetail() {
 
   useEffect(() => {
     // Backend ka sahi URL aur query parameter (?id=) paas kiya hai
-    fetch(`http://localhost:5000/api/getProductBasedOnId?id=${id}`)
+    fetch(`https://ecommerce-backend-e4yh.onrender.com/api/getProductBasedOnId?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
         // Agar database se array mil raha hai toh pehla element set karenge

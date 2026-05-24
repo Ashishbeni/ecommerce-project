@@ -10,7 +10,7 @@ function AdminProductsPage({ AddToCart, cartItems = [] }) {
 
   //Delete products individuly. 
   const handelDeleteProduct = (id)=>{
-    fetch(`http://localhost:5000/api/delete-product/${id}`,
+    fetch(`https://ecommerce-backend-e4yh.onrender.com/api/delete-product/${id}`,
        {
          method:"DELETE"
        })
@@ -26,7 +26,7 @@ function AdminProductsPage({ AddToCart, cartItems = [] }) {
 
   // GET PRODUCTS FROM BACKEND
   useEffect(() => {
-    fetch("http://localhost:5000/api/allProducts")
+    fetch("https://ecommerce-backend-e4yh.onrender.com/api/allProducts")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
