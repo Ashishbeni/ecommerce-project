@@ -13,12 +13,12 @@ function Header() {
 
   const isActive = (path) => location.pathname === path;
 
-  /* ✅ Mobile navbar auto close */
+  /* ✅ Mobile Navbar Close */
   const closeNavbar = () => {
 
     const navbar = document.getElementById("navbarNav");
 
-    if (navbar.classList.contains("show")) {
+    if (navbar && navbar.classList.contains("show")) {
 
       const bsCollapse = new Collapse(navbar, {
         toggle: false,
@@ -56,8 +56,9 @@ function Header() {
 
     if (
       value.includes("product") ||
-      value.includes("milk") ||
-      value.includes("ghee")
+      value.includes("homeopathy") ||
+      value.includes("medicine") ||
+      value.includes("herbal")
     ) {
       navigate("/products?search=" + value);
       setSearch("");
@@ -70,120 +71,161 @@ function Header() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+
+      {/* ✅ NAVBAR */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
 
         <div className="container">
 
-          {/* ✅ Logo */}
+          {/* ✅ LOGO */}
           <Link
             to="/"
             className="navbar-brand d-flex align-items-center"
             onClick={closeNavbar}
           >
+
             <img
-              style={{ width: "50px", height: "60px" }}
               src={Logo}
-              alt="Buffalo Logo"
+              alt="HerbAmrit Logo"
               className="me-2"
+              style={{
+                width: "70px",
+                height: "70px",
+                objectFit: "cover",
+                borderRadius: "18px",
+                border: "3px solid #54a45b",
+                padding: "4px",
+                backgroundColor: "#fff",
+                boxShadow: "0px 3px 12px rgba(0,0,0,0.12)"
+              }}
             />
+
           </Link>
 
-          {/* ✅ Toggle Button */}
+          {/* ✅ MOBILE TOGGLE */}
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
+
             <span className="navbar-toggler-icon"></span>
+
           </button>
 
-          {/* ✅ Navbar Links */}
-          <div className="collapse navbar-collapse" id="navbarNav">
+          {/* ✅ NAV LINKS */}
+          <div
+            className="collapse navbar-collapse"
+            id="navbarNav"
+          >
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-              {/* Home */}
+              {/* HOME */}
               <li className="nav-item">
+
                 <Link
                   className="nav-link"
                   style={isActive("/") ? activeStyle : normalStyle}
                   to="/"
                   onClick={closeNavbar}
                 >
-                  <i className="fa-solid fa-house"></i> Home
+                  <i className="fa-solid fa-house me-1"></i>
+                  Home
                 </Link>
+
               </li>
 
-              {/* About */}
+              {/* ABOUT */}
               <li className="nav-item">
+
                 <Link
                   className="nav-link"
                   style={isActive("/about") ? activeStyle : normalStyle}
                   to="/about"
                   onClick={closeNavbar}
                 >
-                  <i className="fa-solid fa-circle-info"></i> About
+                  <i className="fa-solid fa-circle-info me-1"></i>
+                  About
                 </Link>
+
               </li>
 
-              {/* Products */}
+              {/* PRODUCTS */}
               <li className="nav-item">
+
                 <Link
                   className="nav-link"
                   style={isActive("/products") ? activeStyle : normalStyle}
                   to="/products"
                   onClick={closeNavbar}
                 >
-                  <i className="fa-solid fa-bag-shopping"></i> Products
+                  <i className="fa-solid fa-bag-shopping me-1"></i>
+                  Products
                 </Link>
+
               </li>
 
-              {/* Contact */}
+              {/* CONTACT */}
               <li className="nav-item">
+
                 <Link
                   className="nav-link"
                   style={isActive("/contact") ? activeStyle : normalStyle}
                   to="/contact"
                   onClick={closeNavbar}
                 >
-                  <i className="fa-solid fa-address-book"></i> Contact
+                  <i className="fa-solid fa-address-book me-1"></i>
+                  Contact
                 </Link>
+
               </li>
 
-              {/* Cart */}
+              {/* CART */}
               <li className="nav-item">
+
                 <Link
                   className="nav-link"
                   style={isActive("/cart") ? activeStyle : normalStyle}
                   to="/cart"
                   onClick={closeNavbar}
                 >
-                  <i className="fa-solid fa-cart-shopping"></i> Cart
+                  <i className="fa-solid fa-cart-shopping me-1"></i>
+                  Cart
                 </Link>
+
               </li>
 
-              {/* Support Button */}
-              <li className="nav-item">
+              {/* SUPPORT */}
+              <li className="nav-item mt-2 mt-lg-0">
+
                 <button
-                  className="btn btn-success ms-2"
+                  className="btn btn-success ms-lg-2"
                   data-bs-toggle="modal"
                   data-bs-target="#supportModal"
                   onClick={closeNavbar}
                 >
                   Support
                 </button>
+
               </li>
 
             </ul>
 
-            {/* ✅ Search */}
-            <form className="d-flex" onSubmit={handleSearch}>
+            {/* ✅ SEARCH */}
+            <form
+              className="d-flex mt-3 mt-lg-0"
+              onSubmit={handleSearch}
+            >
 
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search milk products..."
+                placeholder="Search herbal products..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -198,11 +240,17 @@ function Header() {
             </form>
 
           </div>
+
         </div>
+
       </nav>
 
-      {/* ✅ Support Modal */}
-      <div className="modal fade" id="supportModal" tabIndex="-1">
+      {/* ✅ SUPPORT MODAL */}
+      <div
+        className="modal fade"
+        id="supportModal"
+        tabIndex="-1"
+      >
 
         <div className="modal-dialog">
 
@@ -211,7 +259,7 @@ function Header() {
             <div className="modal-header">
 
               <h5 className="modal-title">
-                Support Form
+                HerbAmrit Support
               </h5>
 
               <button
@@ -225,7 +273,9 @@ function Header() {
 
               <form>
 
+                {/* NAME */}
                 <div className="mb-3">
+
                   <label className="form-label">
                     Name
                   </label>
@@ -234,9 +284,12 @@ function Header() {
                     type="text"
                     className="form-control"
                   />
+
                 </div>
 
+                {/* EMAIL */}
                 <div className="mb-3">
+
                   <label className="form-label">
                     Email
                   </label>
@@ -245,9 +298,12 @@ function Header() {
                     type="email"
                     className="form-control"
                   />
+
                 </div>
 
+                {/* MESSAGE */}
                 <div className="mb-3">
+
                   <label className="form-label">
                     Message
                   </label>
@@ -256,8 +312,10 @@ function Header() {
                     className="form-control"
                     rows="3"
                   ></textarea>
+
                 </div>
 
+                {/* BUTTON */}
                 <button
                   type="submit"
                   className="btn btn-success w-100"
@@ -270,22 +328,26 @@ function Header() {
             </div>
 
           </div>
+
         </div>
+
       </div>
+
     </>
   );
 }
 
-/* ✅ Active Link Style */
+/* ✅ ACTIVE LINK */
 const activeStyle = {
   color: "#54a45b",
   fontWeight: "bold",
   borderBottom: "2px solid #54a45b"
 };
 
-/* ✅ Normal Link Style */
+/* ✅ NORMAL LINK */
 const normalStyle = {
-  color: "#000"
+  color: "#000",
+  fontWeight: "500"
 };
 
 export default Header;

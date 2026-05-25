@@ -7,21 +7,17 @@ function AboutTeam() {
     <div className={style.main}>
      <div className={style.heading}>
       <h1>About Our Team</h1>
-      <p>MurrahGold me hamari team sirf logon ka group nahi hai —
-yeh ek family hai jo purity, trust aur care me believe karti hai.
+      <p>HerbAmrit me hamari team sirf employees ka group nahi hai —
+yeh ek family hai jo health, trust aur natural healing me believe karti hai.
 
-Subah ke early milk collection se lekar aapke ghar tak fresh products deliver karne tak, har step hum poori dedication aur honesty ke saath handle karte hain. Har member ka ek hi focus hota hai — best quality dena, bina kisi compromise ke.
+Best homeopathy products select karne se lekar unhe safely aapke ghar tak pahunchane tak, har step hum poori care aur dedication ke saath handle karte hain. Hamari team ka ek hi mission hai — logon tak genuine, safe aur effective homeopathy medicines pahunchana.
 
-Hamare farmers, workers aur staff sab milkar ek hi goal par kaam karte hain:
-aap tak sabse fresh aur natural dairy products pahunchana.
+Hamare experts, staff aur support members sab milkar is baat ka dhyan rakhte hain ki har product quality standards ko follow kare aur customers ko best experience mile. Hum samajhte hain ki health sabse important hoti hai, isliye HerbAmrit par har medicine trust aur authenticity ke saath provide ki jati hai.
 
-Hum samajhte hain ki doodh aur uske products aapki daily life ka important hissa hain. Isliye hum ensure karte hain ki jo bhi aap tak pahunchta hai, wo clean, hygienic aur goodness se bharpur ho.
+Har product ke peeche hamari honesty, care aur customer satisfaction ka promise hota hai.
 
-Har drop doodh ke peeche, har spoon dahi ke andar, aur har bite paneer me —
-hamari mehnat, commitment aur quality ka promise chhupa hota hai.
-
-MuharaGold me hum sirf dairy products nahi bechte —
-hum aapko trust serve karte hain.</p>
+HerbAmrit me hum sirf medicines provide nahi karte —
+hum natural wellness aur trust deliver karte hain.</p>
      </div>
      <div className={style.imgIcon}>
       <img src={FreeDelivery} />

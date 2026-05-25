@@ -8,10 +8,10 @@ function Footer() {
 
           {/* Brand */}
           <div className="col-md-4 mb-4">
-            <h4 className="fw-bold text-warning">MurrahGold</h4>
+            <h4 className="fw-bold text-warning">HerbAmrit</h4>
             <p>
-              Fresh aur pure dairy products ke liye trusted brand.  
-              Hum aap tak quality, hygiene aur natural goodness lekar aate hain.
+              Pure aur trusted homeopathy products ke liye HerbAmrit aapka bharosemand partner hai.  
+Hum aap tak natural care, quality medicines aur healthy wellness solutions lekar aate hain.
             </p>
           </div>
 
@@ -23,6 +23,7 @@ function Footer() {
               <li><a href="/about" className="text-light text-decoration-none">About</a></li>
               <li><a href="/products" className="text-light text-decoration-none">Products</a></li>
               <li><a href="/contact" className="text-light text-decoration-none">Contact</a></li>
+              <li><a href="/cart" className="text-light text-decoration-none">Cart</a></li>
             </ul>
           </div>
 
@@ -34,7 +35,7 @@ function Footer() {
               <p className="mb-1">📞 +91 7056523602</p>
             </a>
             <a style={{color: "white", textDecoration: "none"}} href="mailto:murrahgold@gmail.com?Subject=Inquiry">
-              <p className="mb-1">📧 murrahgold@gmail.com</p>
+              <p className="mb-1">📧 herbAmrit@gmail.com</p>
             </a>
 
             {/* Social Media (Simple & Working) */}
@@ -53,7 +54,7 @@ function Footer() {
 
         <div className="text-center">
           <p className="mb-0">
-            © {new Date().getFullYear()} MurrahGold. All Rights Reserved.
+            © {new Date().getFullYear()} HarbAmrit. All Rights Reserved.
           </p>
         </div>
       </div>

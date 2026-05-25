@@ -12,7 +12,6 @@ function About() {
     <OurStory />
     <OurMission/>
     <OurVision/>
-    <QualityAndPurity/>
     <Footer />
   </>
   );

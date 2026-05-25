@@ -7,14 +7,17 @@ function OurMission() {
     <div className={style.main}>
      <div className={style.heading}>
       <h1>OurMission</h1>
-      <p>Hamari mission simple hai —
-“Har ghar tak safe, fresh aur pure dairy products pahunchana.”
+      <p>HerbAmrit me hamara mission sirf products sell karna nahi hai —
+humara goal hai har ghar tak natural, safe aur trusted homeopathy solutions pahunchana.
 
-Humara focus sirf products bechna nahi, balki har customer ko ek safe aur healthy experience dena hai. Hum chahte hain ki jab aap humare doodh, dahi, paneer ya ghee ka use karein, to aapko bilkul bhi doubt na ho — bas trust aur satisfaction ho.
+Hum believe karte hain ki acchi health ki shuruaat nature se hoti hai. Isi liye HerbAmrit me hum carefully selected homeopathic medicines aur wellness products provide karte hain jo purity, safety aur quality standards ko follow karte hain.
 
-Isliye hum sourcing se lekar delivery tak har step par special dhyaan dete hain. Freshness maintain karna, hygiene follow karna aur quality ko consistent rakhna — yeh sab hamare daily process ka hissa hai.
+Hamara focus har customer ko ek healthy aur trustworthy experience dena hai. Product selection se lekar packaging aur delivery tak, har step par hum quality aur hygiene ka special dhyaan rakhte hain taki aap tak sirf best products hi pahunch sakein.
 
-Hum believe karte hain ki acchi health ki shuruaat clean aur pure food se hoti hai. Isi liye hamari puri team dedicated hai ki aap tak sirf best quality hi pahunchay — natural, fresh aur bilkul safe dairy products, jin par aap har roz bharosa kar sakein.</p>
+Hum chahte hain ki jab bhi aap HerbAmrit ka koi product use karein, to aapko confidence aur satisfaction feel ho — kyunki hamare liye aapki health aur trust sabse important hai.
+
+HerbAmrit sirf ek brand nahi, balki natural healing aur better lifestyle ki taraf ek commitment hai —
+“Healing Naturally, Living Better.</p>
      </div>
      <div className={style.imgIcon}>
       <img src={Ourmission} alt="Team" />

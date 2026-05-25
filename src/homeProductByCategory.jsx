@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import style from "./homeProductByCategory.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function HomeProductByCategory({ AddToCart }) {
 
   const [productByCategory, setProductByCategory] = useState({});
   const [selectedQuantity, setSelectedQuantity] = useState({});
+
+  const sliderRefs = useRef({});
 
   useEffect(() => {
 
@@ -27,6 +31,38 @@ function HomeProductByCategory({ AddToCart }) {
 
   }, []);
 
+  // LEFT SCROLL
+  const scrollLeft = (category) => {
+
+    const container = sliderRefs.current[category];
+
+    if (container) {
+
+      container.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+
+    }
+
+  };
+
+  // RIGHT SCROLL
+  const scrollRight = (category) => {
+
+    const container = sliderRefs.current[category];
+
+    if (container) {
+
+      container.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+
+    }
+
+  };
+
   return (
 
     <div className={style.mainContainer}>
@@ -40,11 +76,43 @@ function HomeProductByCategory({ AddToCart }) {
             className={style.categorySection}
           >
 
-            <h2 className={style.categoryHeading}>
-              {category}
-            </h2>
+            {/* CATEGORY HEADING */}
+            <div className={style.headingContainer}>
 
-            <div className={style.productContainer}>
+              <h2 className={style.categoryHeading}>
+                {category}
+              </h2>
+
+              {/* SLIDER BUTTONS */}
+              <div className={style.sliderBtns}>
+
+                <button
+                  className={style.arrowBtn}
+                  onClick={() => scrollLeft(category)}
+                >
+                  <FaChevronLeft />
+                </button>
+
+                <button
+                  className={style.arrowBtn}
+                  onClick={() => scrollRight(category)}
+                >
+                  <FaChevronRight />
+                </button>
+
+              </div>
+
+            </div>
+
+            {/* PRODUCTS */}
+            <div
+              className={style.productContainer}
+              ref={(el) => {
+                if (el) {
+                  sliderRefs.current[category] = el;
+                }
+              }}
+            >
 
               {
 
@@ -60,12 +128,12 @@ function HomeProductByCategory({ AddToCart }) {
                       {item.productName}
                     </h3>
 
+                    {/* PRODUCT IMAGE */}
                     <img
                       src={item.image}
-                      alt={item.name}
+                      alt={item.productName}
                       className={style.productImage}
                     />
-
 
                     {/* PRICE */}
                     <p className={style.price}>
@@ -101,27 +169,35 @@ function HomeProductByCategory({ AddToCart }) {
 
                     </select>
 
-                    {/* ADD TO CART */}
-                    <button
-                      className={style.cartBtn}
-                      onClick={() =>
-                        AddToCart({
-                          ...item,
-                          quantity: selectedQuantity[item.id] || 1,
-                        })
-                      }
-                    >
-                      Add To Cart
-                    </button>
+                    {/* BUTTON CONTAINER */}
+                    <div className={style.buttonContainer}>
 
-                    {/* VIEW DETAILS */}
-                    <Link to={`/product/${item.id}`}>
-
-                      <button className={style.btn}>
-                        View Details
+                      {/* ADD TO CART */}
+                      <button
+                        className={style.cartBtn}
+                        onClick={() =>
+                          AddToCart({
+                            ...item,
+                            quantity: selectedQuantity[item.id] || 1,
+                          })
+                        }
+                      >
+                        🛒 Cart
                       </button>
 
-                    </Link>
+                      {/* VIEW DETAILS */}
+                      <Link
+                        to={`/product/${item.id}`}
+                        className={style.detailsLink}
+                      >
+
+                        <button className={style.btn}>
+                          👁 Details
+                        </button>
+
+                      </Link>
+
+                    </div>
 
                   </div>
 

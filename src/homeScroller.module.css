@@ -1,0 +1,231 @@
+.container {
+  position: relative;
+  width: 100vw;               /* Poori screen ki width lega */
+  height: 500px;              /* Aap height apne hisab se adjust kar sakte hain (e.g., 60vh) */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;     /* Image load hone tak black background dikhega */
+}
+
+.scrollerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Image stretch nahi hogi, perfectly crop hokar fit baithegi */
+  transition: all 0.5s ease-in-out;
+  animation: fadeEffect 0.6s ease-in-out;
+}
+
+/* Smooth Fade Animation jab image badle */
+@keyframes fadeEffect {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* Attractive Glassmorphism Arrow Buttons */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px); /* Modern blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffffc0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  user-select: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arrowBtn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transform: translateY(-50%) scale(1.1); /* Hover par thoda bada hoga */
+}
+
+.leftArrow { left: 25px; }
+.rightArrow { right: 25px; }
+
+/* Bottom Dots Indicators */
+.dotsContainer {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background-color: #ffffff;
+  width: 24px;                /* Active hone par dot thoda lamba (pill shape) ho jayega jo trendy lagta hai */
+  border-radius: 5px;
+}
+
+
+
+
+/* =================================================== */
+/* 1. MAIN CONTAINER (For Laptops & Desktops)          */
+/* =================================================== */
+.container {
+  position: relative;
+  width: 100vw;               /* Poori screen ki width lega */
+  height: 500px;              /* Desktop par perfect height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;     
+}
+
+.scrollerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Image stretch nahi hogi, perfectly fit aayegi */
+  transition: all 0.5s ease-in-out;
+  animation: fadeEffect 0.6s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* Glassmorphism Arrow Buttons */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(67, 65, 65, 0.2);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  user-select: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arrowBtn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transform: translateY(-50%) scale(1.1); 
+}
+
+.leftArrow { left: 25px; }
+.rightArrow { right: 25px; }
+
+/* Bottom Dots Indicators */
+.dotsContainer {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background-color: #ffffff;
+  width: 24px;                /* Active dot modern pill shape mein dikhega */
+  border-radius: 5px;
+}
+
+/* =================================================== */
+/* 2. TABLET BREAKPOINT (Max-Width: 768px)            */
+/* =================================================== */
+@media (max-width: 768px) {
+  .container {
+    height: 350px;            /* Tablet screen ke liye height kam ki */
+  }
+  
+  .arrowBtn {
+    width: 42px;              /* Buttons thode chhote kiye */
+    height: 42px;
+    font-size: 18px;
+  }
+  
+  .leftArrow { left: 15px; }
+  .rightArrow { right: 15px; }
+}
+
+/* =================================================== */
+/* 3. MOBILE BREAKPOINT (Max-Width: 480px)            */
+/* =================================================== */
+@media (max-width: 480px) {
+  .container {
+    height: 220px;            /* Mobile screens ke liye perfect height */
+  }
+
+  .arrowBtn {
+    width: 36px;              /* Mobile par buttons aur chhote taaki content block na ho */
+    height: 36px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.4); /* Mobile par dark bg zyada accha lagta hai */
+  }
+
+  .leftArrow { left: 10px; }
+  .rightArrow { right: 10px; }
+
+  .dotsContainer {
+    bottom: 15px;            /* Dots ko thoda aur niche fold kiya */
+    padding: 4px 10px;
+  }
+  
+  .dot {
+    width: 8px;              /* Mobile ke hisab se dots ka size chhota kiya */
+    height: 8px;
+  }
+  
+  .activeDot {
+    width: 16px;             /* Active dot ki width mobile ke liye scale down ki */
+  }
+}
