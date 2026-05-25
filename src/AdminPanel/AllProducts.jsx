@@ -72,7 +72,7 @@ function AdminProductsPage({ AddToCart, cartItems = [] }) {
 
               </select>
 
-              <button
+              {/* <button
                 onClick={() =>
                   AddToCart({
                     ...item,
@@ -82,7 +82,7 @@ function AdminProductsPage({ AddToCart, cartItems = [] }) {
                 }
               >
                 Add To Cart
-              </button>
+              </button> */}
 
 
               <Link to={`/product/${item.id}`}>
