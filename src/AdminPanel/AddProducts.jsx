@@ -14,6 +14,35 @@ function AddProducts() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+
+  // --- YAHA SE COPY KAREIN ---
+
+// 1. URL check: Kya link http ya https se shuru ho raha hai?
+if (!product.image.startsWith("http://") && !product.image.startsWith("https://")) {
+  alert("Please enter a valid Image URL (starting with http:// or https://)");
+  return;
+}
+
+// 2. Size check: 100KB se kam hona chahiye
+try {
+  const imgCheck = await fetch(product.image, { method: "HEAD" });
+  const sizeInBytes = imgCheck.headers.get("content-length");
+
+  if (sizeInBytes) {
+    const sizeInKB = sizeInBytes / 1024;
+
+    if (sizeInKB > 100) {
+      alert(`Image size is too large (${sizeInKB.toFixed(2)} KB). It must be less than 100 KB.`);
+      return; // Form submit rok dega
+    }
+  }
+} catch (error) {
+  console.log("Image size validation skipped due to CORS or network error:", error);
+  // Agar link check nahi ho paya (CORS error ki wajah se), toh ye aage badhne dega.
+}
+
+// --- YAHA TAK COPY KAREIN ---
+
   await fetch("https://ecommerce-backend-e4yh.onrender.com/api/add", {
         method: "POST",
         headers: {
