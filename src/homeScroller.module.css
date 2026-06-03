@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 100vw;               /* Poori screen ki width lega */
+  width: 100%;               /* Poori screen ki width lega */
   height: 500px;              /* Aap height apne hisab se adjust kar sakte hain (e.g., 60vh) */
   margin: 0;
   padding: 0;
@@ -94,7 +94,7 @@
 /* =================================================== */
 .container {
   position: relative;
-  width: 100vw;               /* Poori screen ki width lega */
+  width: 100%;               /* Poori screen ki width lega */
   height: 500px;              /* Desktop par perfect height */
   margin: 0;
   padding: 0;

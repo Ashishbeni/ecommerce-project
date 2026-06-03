@@ -182,7 +182,7 @@ function HomeProductByCategory({ AddToCart }) {
                           })
                         }
                       >
-                        🛒 Cart
+                        🛒
                       </button>
 
                       {/* VIEW DETAILS */}

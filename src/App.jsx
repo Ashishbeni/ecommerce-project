@@ -4,6 +4,7 @@ import About from "./about";
 import ProductsPage from "./ProductsPage";
 import Contact from "./Contact";
 import Cart from "./Cart";
+import UpdateProduct from "./UpdateProduct"
 
 // Admin Panel
 import AddProducts from "./AdminPanel/AddProducts";
@@ -105,6 +106,11 @@ function App() {
           element={<Home AddToCart={AddToCart} />}
         />
 
+       <Route
+  path="/update-product/:id"
+  element={<UpdateProduct />}
+/>
+
         <Route
           path="/home"
           element={<Home AddToCart={AddToCart} />}
@@ -149,6 +155,8 @@ function App() {
             />
           }
         />
+
+        
 
         {/* ADMIN PANEL */}
         <Route path="/admin" element={<AdminHome />} />

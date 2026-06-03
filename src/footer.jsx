@@ -23,7 +23,6 @@ Hum aap tak natural care, quality medicines aur healthy wellness solutions lekar
               <li><a href="/about" className="text-light text-decoration-none">About</a></li>
               <li><a href="/products" className="text-light text-decoration-none">Products</a></li>
               <li><a href="/contact" className="text-light text-decoration-none">Contact</a></li>
-              <li><a href="/cart" className="text-light text-decoration-none">Cart</a></li>
             </ul>
           </div>
 
@@ -40,10 +39,10 @@ Hum aap tak natural care, quality medicines aur healthy wellness solutions lekar
 
             {/* Social Media (Simple & Working) */}
             <div className="mt-3">
-              <a href="#" className="text-light me-3">👍 Facebook</a>
-              <a href="#" className="text-light me-3">📸 Instagram</a>
-              <a href="#" className="text-light me-3">🐦 Twitter</a>
-              <a href="#" className="text-light">💬 WhatsApp</a>
+              <a href="https://www.facebook.com/" className="text-light me-3">👍 Facebook</a>
+              <a href="https://www.instagram.com/" className="text-light me-3">📸 Instagram</a>
+              <a href="https://x.com/" className="text-light me-3">🐦 Twitter</a>
+              <a href="https://www.whatsapp.com/" className="text-light">💬 WhatsApp</a>
             </div>
 
           </div>

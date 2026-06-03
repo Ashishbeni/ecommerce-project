@@ -89,7 +89,14 @@ function AdminProductsPage({ AddToCart, cartItems = [] }) {
                 <button>View Details</button>
               </Link>
 
+             <Link to={`/update-product/${item.id}`}>
+                    <button>Edit</button>
+              </Link>
+
               <button onClick={()=>handelDeleteProduct(item.id)}>Delete</button>
+
+
+
 
             </div>
 
